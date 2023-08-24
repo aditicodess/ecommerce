@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="format-detection"
+      content="telephone=no, date=no, address=no, email=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Order Confirmation Email</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body >
+    
+                    
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              align="center"
+              width="640"
+              style="width: 640px; min-width: 640px"
+              role="presentation"
+              bgcolor="#FFFFFF"
+            >
+              
+                <tr>
+                  <td
+                    align="center"
+                    style="
+                      color: #45535c;
+                      padding: 20px 40px 0 40px;
+                      font-family: 'Lato', Arial, Helvetica, sans-serif;
+                      font-weight: 800;
+                      font-size: 34px;
+                      -webkit-font-smoothing: antialiased;
+                      line-height: 1.2;
+                    "
+                    class="table-container mobile-title"
+                  >
+                    We’ve got your order
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    align="center"
+                    style="
+                      color: #45535c;
+                      padding: 20px 40px 0 40px;
+                      font-family: 'Lato', Arial, Helvetica, sans-serif;
+                      font-weight: 800;
+                      font-size: 22px;
+                      -webkit-font-smoothing: antialiased;
+                      line-height: 1.2;
+                    "
+                    class="table-container mobile-title"
+                  >
+                    Hi {{cart.user}}!
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    align="center"
+                    style="
+                      color: #5a5a5a;
+                      padding: 20px 40px 0 40px;
+                      font-family: 'Lato', Arial, Helvetica, sans-serif;
+                      font-weight: normal;
+                      font-size: 16px;
+                      -webkit-font-smoothing: antialiased;
+                      line-height: 1.4;
+                    "
+                    class="table-container"
+                  >
+                    This is the Order Confirmation Email. We have Attached all
+                    the required details in this Email.
+                  </td>
+                </tr>
+              
+            </table>
+            <br />
+            <br />
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              align="center"
+              width="640"
+              style="width: 640px; min-width: 640px"
+              role="presentation"
+              bgcolor="#FFFFFF"
+            >
+                      <tr>
+                        <th
+                          bgcolor="#FFFFFF"
+                          align="left"
+                          style="
+                            color: #5a5a5a;
+
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          Product Name
+                        </th>
+                        <th
+                          bgcolor="#FFFFFF"
+                          align="right"
+                          style="
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          Bill Amount
+                        </th>
+                      </tr>
+                  
+                      {% for cart_item in cart.cart_items.all %}
+                      <tr>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="left"
+                          style="
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: normal;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          {{cart_item.product.product_name}}
+                        </td>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="right"
+                          style="
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          {{cart_item.get_product_price}} Rs
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    
+                      <tr>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="left"
+                          style="
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: normal;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          Shipping & Handling
+                        </td>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="right"
+                          style="
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                        >
+                          20 Rs
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="left"
+                          style="
+                            border-top: 2px solid #cccccc;
+                            border-bottom: 2px solid #cccccc;
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 14px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                          class="table-container"
+                        >
+                          TOTAL
+                        </td>
+                        <td
+                          bgcolor="#FFFFFF"
+                          align="right"
+                          style="
+                            border-top: 2px solid #cccccc;
+                            border-bottom: 2px solid #cccccc;
+                            color: #5a5a5a;
+                            padding: 10px 40px 10px 40px;
+                            font-family: 'Lato', Arial, Helvetica, sans-serif;
+                            font-weight: bold;
+                            font-size: 16px;
+                            -webkit-font-smoothing: antialiased;
+                            line-height: 1.4;
+                          "
+                          class="table-container"
+                        >
+                          {{ cart.get_cart_total|add:"20" }} Rs
+                        </td>
+                      </tr>
+                    
+                  </table> 
+                  <br />
+                  <br />   
+            <table
+              cellpadding="0"
+              cellspacing="0"
+              border="0"
+              align="center"
+              width="640"
+              style="width: 640px; min-width: 640px"
+              bgcolor="#FFFFFF"
+              role="presentation"
+              class="table-container"
+            >
+                <tr>
+                  
+                       
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 16px;
+                              line-height: 16px;
+                              font-weight: bold;
+                            "
+                          >
+                            Order ID:
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            height="10"
+                            style="line-height: 10px; min-height: 10px"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 14px;
+                              line-height: 14px;
+                              font-weight: normal;
+                            "
+                          >
+                            {{cart.stripe_pay_session_id}}
+                          </td>
+                        </tr>
+                    
+                        <tr>
+                          <td
+                            height="20"
+                            style="line-height: 20px; min-height: 20px"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 16px;
+                              line-height: 16px;
+                              font-weight: bold;
+                            "
+                          >
+                            Customer Name
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            height="10"
+                            style="line-height: 10px; min-height: 10px"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 14px;
+                              line-height: 14px;
+                              font-weight: normal;
+                            "
+                          >
+                            {{cart.user}}
+                          </td>
+                        </tr>
+                     
+                        <tr>
+                          <td
+                            height="20"
+                            style="line-height: 20px; min-height: 20px"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 16px;
+                              line-height: 16px;
+                              font-weight: bold;
+                            "
+                          >
+                            Date & Time
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            height="10"
+                            style="line-height: 10px; min-height: 10px"
+                          ></td>
+                        </tr>
+                        <tr>
+                          <td
+                            align="center"
+                            valign="top"
+                            style="
+                              color: #111111;
+                              font-family: 'Lato', Arial, Helvetica, sans-serif;
+                              font-size: 14px;
+                              line-height: 14px;
+                              font-weight: normal;
+                            "
+                          >
+                            {{cart.created_at}}
+                          </td>
+                        </tr>
+                    </table>
+                  
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      align="center"
+      width="640"
+      style="width: 640px; min-width: 640px"
+      role="presentation"
+      bgcolor="#FFFFFF"
+    >
+      <tr>
+        <td height="60" style="line-height: 60px; min-height: 60px"></td>
+      </tr>
+    </table>
+  </body>
+</html>
